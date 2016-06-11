@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width"/>
+
+	<title>Elementum</title>
+	
+	<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+	<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="bower_components/underscore/underscore-min.js"></script>
+	<script type="text/javascript" src="bower_components/material-design-lite/material.min.js"></script>
+
+
+	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="bower_components/unsemantic/assets/stylesheets/unsemantic-grid-responsive-tablet-no-ie7.css">
+	<link rel="stylesheet" type="text/css" href="bower_components/material-design-lite/material.min.css">
+
+	<script type="text/javascript" src="assets/js/elementum.js"></script>
+	<link rel="stylesheet" type="text/css" href="assets/css/elementum.css">
+
+</head>
+<body ng-app="elementum" ng-controller="elementumCtrl">
+	<div id="base" class="grid-100 baseClass">
+		<div id="leftBar" class="grid-15 leftBar">
+			
+		</div>
+		<div id="board" class="grid-70 board mdl-shadow--2dp">
+			<element-card></element-card>
+		</div>
+		<div id="rightBar" class="grid-15 rightBar">
+			
+		</div>
+	</div>
+</body>
+</html>

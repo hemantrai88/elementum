@@ -1,0 +1,26 @@
+body {
+	padding: 0;
+	margin: 0;
+}
+
+.baseClass {
+	background: #4db6ac; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#4db6ac, #b2dfdb); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#4db6ac, #b2dfdb); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#4db6ac, #b2dfdb); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#4db6ac, #b2dfdb); /* Standard syntax */
+	padding: 0;
+	margin: 0;
+}
+
+.leftBar {
+
+}
+
+.board {
+	background: #FFFFFF;
+}
+
+.rightBar {
+
+}

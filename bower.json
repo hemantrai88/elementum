@@ -1,0 +1,27 @@
+{
+  "name": "elementum",
+  "version": "0.0.0",
+  "homepage": "https://github.com/hemantrai88/elementum",
+  "authors": [
+    "Hemant Rai <hemantrai1988@gmail.com>"
+  ],
+  "description": "A matching puzzle game based on the periodic table",
+  "moduleType": [
+    "amd"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.5.6",
+    "unsemantic": "~1.1.3",
+    "underscore": "~1.8.3",
+    "jquery": "~3.0.0",
+    "material-design-lite": "~1.1.3"
+  }
+}

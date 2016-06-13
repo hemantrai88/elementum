@@ -15,20 +15,54 @@
 	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" type="text/css" href="bower_components/unsemantic/assets/stylesheets/unsemantic-grid-responsive-tablet-no-ie7.css">
 	<link rel="stylesheet" type="text/css" href="bower_components/material-design-lite/material.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
 
 	<script type="text/javascript" src="assets/js/elementum.js"></script>
 	<link rel="stylesheet" type="text/css" href="assets/css/elementum.css">
 
 </head>
 <body ng-app="elementum" ng-controller="elementumCtrl">
-	<div id="base" class="grid-100 baseClass">
+
+	<div id="startSplash" class="grid-100 startSplash" ng-if="!startGame">
+		<img class="gameLogo" src="assets/images/atom-icon.png">
+		<div class="gameTitle">ELEMENTUM</div>
+		<div class="gameMotto">KNOW YOUR ELEMENTS</div>
+		<div id="startSplashCenter" class="startSplashCenter">
+			<div class="grid-100 splashText">
+				<div class="nameQuestionText grid-50">
+					What should we call you?
+				</div>
+				<div class="grid-50">
+					<div class="mdl-textfield mdl-js-textfield playerNameDiv">
+					    <input class="mdl-textfield__input playerName" type="text" id="playerName" ng-model="playerName">
+					</div>
+					<div class="goButtonDiv">
+						<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" ng-class="{'goButtonActive' : playerName.length > 2 }" ng-click="launchGame();">
+						  Let's Go!
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="base" class="grid-100 baseClass" ng-if="startGame">
 		<div id="leftBar" class="grid-15 leftBar">
-			
+			<div class="gameTitleSmall">ELEMENTUM</div>			
 		</div>
-		<div id="board" class="grid-70 board mdl-shadow--2dp">
-			<element-card></element-card>
-		</div>
-		<div id="rightBar" class="grid-15 rightBar">
+		<div id="board" class="grid-80 board mdl-shadow--2dp">
+			<div class="elementGrid grid-100">
+				<div class="grid-20" ng-repeat="elem in firstList">
+					<element-card elem="elem" ng-click="openCard($event, elem)"></element-card>		
+				</div>
+				<!-- <div class="grid-20" ng-repeat="elem in firstListMatch">
+					<element-card elem="elem"></element-card>		
+				</div> -->
+			</div>
+<!-- 			<element-card elem="elem" ng-repeat="elem in firstList"></element-card>
+			<element-card elem="elem" ng-repeat="elem in firstListMatch"></element-card>
+ -->		</div>
+		<div id="rightBar" class="grid-5 rightBar">
 			
 		</div>
 	</div>

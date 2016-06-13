@@ -1,4 +1,5 @@
 body {
+	font-family: 'Slabo 27px', serif;
 	padding: 0;
 	margin: 0;
 }
@@ -19,8 +20,299 @@ body {
 
 .board {
 	background: #FFFFFF;
+	text-align: center;
+	padding: 3rem 0;
 }
 
 .rightBar {
 
+}
+
+
+
+/* entire container, keeps perspective */
+.flip-container {
+	perspective: 1000px;
+	border: 5px solid #004d40;
+}
+/* flip the pane when hovered */
+.flip-me {
+	transform: rotateY(180deg);
+}
+
+.flip-container, .front, .back {
+	width: 100%;
+	height: 20rem;
+	display: inline-block;
+	cursor: pointer;
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+	background: #009688;
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(180deg);
+	background: #00bfa5;
+}
+
+.frontCardDiv {
+    color: #fff;
+    font-weight: 700;
+    text-align: center;
+    margin: 3rem 0;
+    text-shadow: 3px 3px 3px #333;
+}
+
+.frontcardLabel {
+    font-size: 10rem;
+    line-height: 10rem;
+}
+
+element-card {
+    padding: 0 0.1rem;
+}
+
+.cardTextSmall {
+	font-size: 2rem;
+	line-height: 2rem;
+	letter-spacing: 0.25rem;
+}
+
+.startSplash {
+	background: #64ffda;
+	opacity: 0.6;
+}
+
+.startSplashCenter {
+	margin: auto;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: #004d40;
+	color: #fff;
+	height: 10rem;
+	text-align: right;
+	-webkit-animation: slideLeft 0.5s; /* Chrome, Safari, Opera */ 
+  	animation: slideLeft 0.5s;
+}
+
+.gameTitle {
+    color: #004d40;
+    font-size: 10rem;
+    text-align: center;
+    margin: 5rem;
+	-webkit-animation: appear 2s; /* Chrome, Safari, Opera */ 
+  	animation: appear 2s;    
+  	text-shadow: 3px 3px 3px #009688;
+}
+
+.gameMotto {
+    color: #004d40;
+    font-size: 2rem;
+    text-align: center;
+    border-top: 0.25rem solid #004d40;
+    border-bottom: 0.25rem solid #004d40;
+    padding: 2rem 0;
+    -webkit-animation: appear 4s; /* Chrome, Safari, Opera */ 
+  	animation: appear 4s;
+}
+
+.gameLogo {
+    width: 15rem;
+    height: 15rem;
+    position: fixed;
+    left: 7rem;
+    top: -1.8rem;
+    -webkit-animation: appear 4s; /* Chrome, Safari, Opera */ 
+  	animation: appear 4s;
+}
+
+.nameQuestionText {
+    color: #fff;
+    font-size: 2rem;
+    line-height: 6rem;
+    padding-right: 2.5rem;
+    -webkit-animation: appear 1.5s; /* Chrome, Safari, Opera */ 
+  	animation: appear 1.5s;
+}
+
+.playerName {
+	border-bottom: 5px solid #fff;	
+	font-size: 2rem;
+    font-weight: 700;
+    -webkit-animation: appear 1.5s; /* Chrome, Safari, Opera */ 
+  	animation: appear 1.5s;	
+}
+
+.splashText {
+	margin-top: 2rem;
+}
+
+.goButtonDiv {
+    display: inline-block;
+    float: left;
+    margin-top: 1.5rem;
+    margin-left: 3rem;
+    -webkit-animation: appear 1.5s; /* Chrome, Safari, Opera */ 
+  	animation: appear 1.5s;
+}
+
+.playerNameDiv {
+	float: left;
+}
+
+.goButton {
+	background: #004d40;
+	color: #333;
+	font-weight: 700;
+}
+
+.goButton:hover {
+	background: #004d40;
+}
+
+.goButtonActive {
+	background: #64ffda;
+	color: #333;
+	font-weight: 700;
+}
+
+.goButtonActive:hover {
+	background: #64ffda;
+}
+
+@-webkit-keyframes slideLeft {
+    0%   {left: 100%;}
+    25%  {left: 75%;}
+    50%  {left: 50%;}
+    75%  {left: 25%;}
+    100% {left: 0%; }
+}
+
+/* Standard syntax */ 
+@keyframes slideLeft {
+    0%   {left: 100%;}
+    25%  {left: 75%;}
+    50%  {left: 50%;}
+    75%  {left: 25%;}
+    100% {left: 0%; }
+}
+
+@-webkit-keyframes appear {
+    0%   {opacity: 0;}
+    25%  {opacity: 0.25;}
+    50%  {opacity: 0.50;}
+    75%  {opacity: 0.75;}
+    100% {opacity: 1; }
+}
+
+/* Standard syntax */ 
+@keyframes appear {
+    0%   {opacity: 0;}
+    25%  {opacity: 0.25;}
+    50%  {opacity: 0.50;}
+    75%  {opacity: 0.75;}
+    100% {opacity: 1; }
+}
+
+.gameTitleSmall {
+    color: #004d40;
+    font-size: 2rem;
+    margin-top: 2rem;
+    font-weight: 700;
+    text-shadow: 3px 3px 3px #009688;
+}
+
+
+#container {
+  margin-top: 20px;
+  margin-left: 30px;
+  position: relative;
+  background: #45453f;
+}
+
+.pulseMatch {
+  border: 10px solid #fff601;
+  background: transparent;
+  -webkit-animation: pulse 3s ease-out;
+  -moz-animation: pulse 3s ease-out;
+  animation: pulse 3s ease-out;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  position: absolute;
+  z-index: 1;
+  opacity: 0;
+  display: none;
+}
+
+@-moz-keyframes pulse {
+ 0% {
+    -moz-transform: scale(1);
+    opacity: 0.0;
+ }
+ 25% {
+    -moz-transform: scale(1);
+    opacity: 0.1;
+ }
+ 50% {
+    -moz-transform: scale(1.1);
+    opacity: 0.3;
+ }
+ 75% {
+    -moz-transform: scale(1.5);
+    opacity: 0.5;
+ }
+ 100% {
+    -moz-transform: scale(1);
+    opacity: 0.0;
+ }
+}
+
+@-webkit-keyframes "pulse" {
+ 0% {
+    -webkit-transform: scale(1);
+    opacity: 0.0;
+ }
+ 25% {
+    -webkit-transform: scale(1);
+    opacity: 0.1;
+ }
+ 50% {
+    -webkit-transform: scale(1.1);
+    opacity: 0.3;
+ }
+ 75% {
+    -webkit-transform: scale(1.5);
+    opacity: 0.5;
+ }
+ 100% {
+    -webkit-transform: scale(1);
+    opacity: 0.0;
+ }
 }

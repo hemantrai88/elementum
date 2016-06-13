@@ -1,10 +1,21 @@
-<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-	<div class="flipper">
+<div id="wrapper_{{ elem.cardId }}" class="pulseMatch"></div>
+<div class="flip-container" id="container_{{ elem.cardId }}">
+	<div class="flipper" id="{{ elem.cardId }}">
 		<div class="front">
-			<!-- front content -->
+			<div class="frontCardDiv">
+				<div class="cardTextSmall">XXXXXX</div>
+				<div class="cardTextSmall">X</div>
+				<div class="frontcardLabel">X</div>
+				<div class="cardTextSmall">XX.XXX</div>
+			</div>
 		</div>
 		<div class="back">
-			<!-- back content -->
+			<div class="frontCardDiv">
+				<div class="cardTextSmall">{{ elem.key }}</div>
+				<div class="cardTextSmall">{{ elem.element.atomic_number }}</div>
+				<div class="frontcardLabel">{{ elem.element.abbreviation }}</div>
+				<div class="cardTextSmall">{{ elem.element.atomic_weight }}</div>
+			</div>
 		</div>
 	</div>
 </div>

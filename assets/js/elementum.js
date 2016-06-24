@@ -702,15 +702,12 @@ elementum.controller('elementumCtrl', ['$scope', function($scope) {
 	};
 
 	$scope.openCard = function(event, elem) {
-		console.log('EVENT : ', event.target);
-		console.log('ELEM : ', elem);
 		if(!$scope.firstMatch) {
 			$scope.firstSelected = elem;
 			$scope.firstMatch = true;
 			$('#'+elem.cardId).addClass('flip-me');
 			var h = $('#container_'+$scope.firstSelected.cardId).height();
 			var w = $('#container_'+$scope.firstSelected.cardId).width();
-			console.log('h : ', h, ' w: ', w);
 			$('#wrapper_'+$scope.firstSelected.cardId).css({'height': h, 'width': w});
 			_.delay(function() { $('#wrapper_'+$scope.firstSelected.cardId).css('display', 'block'); }, 1000);
 		}else{
@@ -718,7 +715,6 @@ elementum.controller('elementumCtrl', ['$scope', function($scope) {
 			$scope.secondMatch = true;
 			$('#'+elem.cardId).addClass('flip-me');
 			var w = $('#container_'+$scope.firstSelected.cardId).width();
-			console.log('h : ', h, ' w: ', w);
 			$('#wrapper_'+$scope.firstSelected.cardId).css({'height': h, 'width': w});
 			_.delay(function() { $('#wrapper_'+$scope.firstSelected.cardId).css('display', 'block'); }, 1000);
 		}
@@ -734,6 +730,10 @@ elementum.controller('elementumCtrl', ['$scope', function($scope) {
 
 			if($scope.firstSelected.key === $scope.secondSelected.key) {
 				console.log('MATCH FOUND!!!');
+				_.delay(function() { 
+					$('#container_'+$scope.firstSelected.cardId).addClass('flipped'); 
+					$('#container_'+$scope.secondSelected.cardId).addClass('flipped'); 
+				}, 2000);
 			}else{
 				console.log('NO MATCH');
 			}
